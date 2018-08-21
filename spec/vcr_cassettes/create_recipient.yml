@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://private-anon-254dee004e-coolpayapi.apiary-mock.com/api/login
+    uri: https://coolpay.herokuapp.com/api/login
     body:
       encoding: UTF-8
       string: '{"username":"Yann1","apikey":"6C5BC43B473975B8"}'
@@ -20,42 +20,35 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
-      X-Apiary-Ratelimit-Limit:
-      - '120'
-      X-Apiary-Ratelimit-Remaining:
-      - '119'
-      Content-Type:
-      - application/json
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - OPTIONS,GET,HEAD,POST,PUT,DELETE,TRACE,CONNECT
-      Access-Control-Max-Age:
-      - '10'
-      X-Apiary-Transaction-Id:
-      - 5b7c7826f5e65a0a001aacbe
-      Content-Length:
-      - '55'
-      Date:
-      - Tue, 21 Aug 2018 20:37:58 GMT
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 20:47:18 GMT
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - 66c6747d-4c2a-458e-95f1-e134e0711b51
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: |-
-        {
-            "token": "aff06fec-e041-4994-849e-223f0569e0bc"
-        }
+      string: '{"token":"8de6f3ae-48d4-44f8-b2a3-6d84114276df"}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 20:37:58 GMT
+  recorded_at: Tue, 21 Aug 2018 20:47:19 GMT
 - request:
     method: post
-    uri: https://private-anon-254dee004e-coolpayapi.apiary-mock.com/api/recipients
+    uri: https://coolpay.herokuapp.com/api/recipients?recipient%5Bname%5D=John%20Doe
     body:
       encoding: UTF-8
-      string: '{"name":"John Doe"}'
+      string: "{}"
     headers:
       User-Agent:
       - Faraday v0.12.2
@@ -72,37 +65,29 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - Cowboy
-      X-Apiary-Ratelimit-Limit:
-      - '120'
-      X-Apiary-Ratelimit-Remaining:
-      - '118'
-      Content-Type:
-      - application/json
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - OPTIONS,GET,HEAD,POST,PUT,DELETE,TRACE,CONNECT
-      Access-Control-Max-Age:
-      - '10'
-      X-Apiary-Transaction-Id:
-      - 5b7c7826f5e65a0a001aacbf
-      Content-Length:
-      - '114'
-      Date:
-      - Tue, 21 Aug 2018 20:37:59 GMT
       Connection:
       - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 20:47:18 GMT
+      Content-Length:
+      - '77'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - 1036e76d-8fcf-41f9-9395-55245cf17b83
+      Location:
+      - "/api/recipients/df6cfea5-76a2-426e-af12-715e3dc6c0a8"
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: |-
-        {
-            "recipient": {
-                "id": "e9a0336b-d81d-4009-9ad1-8fa1eb43418c",
-                "name": "Jake McFriend"
-            }
-        }
+      string: '{"recipient":{"name":"John Doe","id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8"}}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 20:37:59 GMT
+  recorded_at: Tue, 21 Aug 2018 20:47:19 GMT
 recorded_with: VCR 4.0.0

@@ -9,7 +9,7 @@ class CoolPay
   LOGIN_URL      = '/api/login'.freeze
 
   def create_recipient(attributes)
-    response = post_response(RECIPIENTS_URL, body: attributes)
+    response = post_response(RECIPIENTS_URL, params: { recipient: attributes })
     Recipient.new(response['recipient'])
   end
 
@@ -20,11 +20,12 @@ class CoolPay
   end
 
 
-  def post_response(url, body: {}, login: true)
+  def post_response(url, params: {}, body: {}, login: true)
     response = connection.post do |req|
       req.url url
       req.headers[CONTEN_TYPE_HEADER] = 'application/json'
       req.headers[API_KEY_HEADER] = "Bearer #{auth_token}" if login
+      req.params = params
       req.body = body.to_json
     end
 
