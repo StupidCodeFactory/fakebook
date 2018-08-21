@@ -1,1 +1,12 @@
 %h2 Send Money to #{@recipient.name}
+
+= form_for [@recipient, @payment] do |f|
+  = f.hidden_field :id
+  = f.fields_for :payment do |pf|
+
+  .form-item
+    = pf.label :amount
+    = pf.number_field :amount
+  .form-item
+    = pf.label :currency
+    = pf.select :currency, options_from_collection_for_select(Money::Currency.all, :iso_code, :name)

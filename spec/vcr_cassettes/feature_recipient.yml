@@ -179,4 +179,93 @@ http_interactions:
       string: '{"recipient":{"name":"John Doe","id":"65ffa457-bc7d-46e1-bb25-237b43962a9e"}}'
     http_version: 
   recorded_at: Tue, 21 Aug 2018 21:07:10 GMT
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"Yann1","apikey":"6C5BC43B473975B8"}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 21:29:51 GMT
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - '09a7d3eb-9fd8-4cb8-a697-1fa80da555f9'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"2c65829f-51e6-4e37-a147-b0c0ac1c8d70"}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 21:29:51 GMT
+- request:
+    method: get
+    uri: https://coolpay.herokuapp.com/api/recipients
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - api_token
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 21:29:51 GMT
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - 055bc750-e910-4f70-8e61-7af8a6efda5f
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"recipients":[{"name":"John Doe","id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8"},{"name":"John
+        Doe","id":"8cc574c3-3350-4c15-a464-8a953f5a231e"},{"name":"John Doe","id":"65ffa457-bc7d-46e1-bb25-237b43962a9e"}]}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 21:29:52 GMT
 recorded_with: VCR 4.0.0

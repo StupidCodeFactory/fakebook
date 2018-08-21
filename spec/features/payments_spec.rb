@@ -26,8 +26,10 @@ RSpec.describe 'Payments Page', js: true do
     end
 
     fill_in 'payments[amount]', with: 10.5
+    select 'GBP', from: 'payments[currency]'
     click_on 'Pay!'
 
+    expect(page.to).to have_css '.notice', text: 'Payment sent'
 
   end
 end
