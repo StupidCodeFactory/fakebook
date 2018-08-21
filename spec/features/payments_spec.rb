@@ -6,7 +6,7 @@ RSpec.describe 'Payments Page', js: true do
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
         uid: '123545', info: { email: 'test@example.com' })
   end
-
+  let(:new_recipient_name) { 'John Doe' }
   it 'list payments' do
     visit root_path
 
@@ -14,8 +14,9 @@ RSpec.describe 'Payments Page', js: true do
 
     expect(page).to have_css 'h2', text: 'Your Recipients'
 
-    fill_in 'recipient[name]', with: 'John Doe'
+    fill_in 'recipient[name]', with: new_recipient_name
     click_on 'Create Recipient'
 
+    expect(page).to have_css 'table tobdy tr td', text: new_recipient_name
   end
 end
