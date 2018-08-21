@@ -1,0 +1,108 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://private-anon-254dee004e-coolpayapi.apiary-mock.com/api/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"Yann1","apikey":"6C5BC43B473975B8"}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      X-Apiary-Ratelimit-Limit:
+      - '120'
+      X-Apiary-Ratelimit-Remaining:
+      - '119'
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,HEAD,POST,PUT,DELETE,TRACE,CONNECT
+      Access-Control-Max-Age:
+      - '10'
+      X-Apiary-Transaction-Id:
+      - 5b7c7826f5e65a0a001aacbe
+      Content-Length:
+      - '55'
+      Date:
+      - Tue, 21 Aug 2018 20:37:58 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "token": "aff06fec-e041-4994-849e-223f0569e0bc"
+        }
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 20:37:58 GMT
+- request:
+    method: post
+    uri: https://private-anon-254dee004e-coolpayapi.apiary-mock.com/api/recipients
+    body:
+      encoding: UTF-8
+      string: '{"name":"John Doe"}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - api_token
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      X-Apiary-Ratelimit-Limit:
+      - '120'
+      X-Apiary-Ratelimit-Remaining:
+      - '118'
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,HEAD,POST,PUT,DELETE,TRACE,CONNECT
+      Access-Control-Max-Age:
+      - '10'
+      X-Apiary-Transaction-Id:
+      - 5b7c7826f5e65a0a001aacbf
+      Content-Length:
+      - '114'
+      Date:
+      - Tue, 21 Aug 2018 20:37:59 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "recipient": {
+                "id": "e9a0336b-d81d-4009-9ad1-8fa1eb43418c",
+                "name": "Jake McFriend"
+            }
+        }
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 20:37:59 GMT
+recorded_with: VCR 4.0.0

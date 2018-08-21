@@ -1,5 +1,7 @@
 class Recipient
-  include ActiveModel::Model, ActiveModel::Attributes
+  include ActiveModel::Model
+  include ActiveModel::Attributes
 
-  attribute :name
+  attribute :name, :string
+  attribute :id,   :string
 end

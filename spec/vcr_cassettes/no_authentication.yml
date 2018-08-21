@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://coolpay.herokuapp.com/api/recipients
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 20:22:15 GMT
+      Content-Length:
+      - '27'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - e8b9eed6-acc5-4f1b-8e77-edf7106e77d9
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: Please provide a good token
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 20:22:15 GMT
+recorded_with: VCR 4.0.0
