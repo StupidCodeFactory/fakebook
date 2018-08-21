@@ -4,8 +4,12 @@ class RecipientService
     api.create_recipient(attributes)
   end
 
+  def find(id)
+    recipients.detect { |recipient| recipient.id == id }
+  end
+
   def recipients
-    api.fetch_recipients
+    @recipients ||= api.fetch_recipients
   end
 
   def api

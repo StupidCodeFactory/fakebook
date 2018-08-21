@@ -21,7 +21,7 @@ RSpec.describe CoolPay do
     end
   end
 
-  describe '#fetch_recipients', vcr: { cassette_name: :fetch_recipients }  do
+  describe '#fetch_recipients', vcr: { cassette_name: :fetch_recipients } do
     it 'returns a list of recipients' do
       expect(subject.fetch_recipients).to all(be_instance_of(Recipient))
       expect(subject.fetch_recipients.size).to eq(2)
