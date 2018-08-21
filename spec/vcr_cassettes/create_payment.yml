@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:26:40 GMT
+      - Tue, 21 Aug 2018 22:32:10 GMT
       Content-Length:
       - '48'
       Content-Type:
@@ -35,20 +35,20 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - 3e0a7565-87ee-4034-8b88-a296a7c1119a
+      - c8db5d6e-263b-48d4-97f7-d117e4562e81
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"c7b864b5-7a7d-48cd-b922-045c0183e8a1"}'
+      string: '{"token":"eb9541b5-ecbb-47c8-961d-c855328543cf"}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:26:40 GMT
+  recorded_at: Tue, 21 Aug 2018 22:32:11 GMT
 - request:
     method: post
-    uri: https://coolpay.herokuapp.com/api/recipients
+    uri: https://coolpay.herokuapp.com/api/payments
     body:
       encoding: UTF-8
-      string: '{"recipient":{"name":"John Doe"}}'
+      string: '{"payment":{"recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","amount":10.5,"currency":"GBP"}}'
     headers:
       User-Agent:
       - Faraday v0.12.2
@@ -70,9 +70,9 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:26:41 GMT
+      - Tue, 21 Aug 2018 22:32:11 GMT
       Content-Length:
-      - '77'
+      - '166'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
@@ -80,14 +80,14 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - 4c0e80b2-3ef8-469e-8571-95727f4953a9
+      - 7371230b-ab67-40ad-9a52-856df7435521
       Location:
-      - "/api/recipients/e211830d-9181-4a2e-bf8c-28bdd74f125f"
+      - "/api/payments/ace46638-66ef-4c0c-b648-99cef7724ae3"
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"recipient":{"name":"John Doe","id":"e211830d-9181-4a2e-bf8c-28bdd74f125f"}}'
+      string: '{"payment":{"status":"processing","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"ace46638-66ef-4c0c-b648-99cef7724ae3","currency":"GBP","amount":"10.5"}}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:26:41 GMT
+  recorded_at: Tue, 21 Aug 2018 22:32:12 GMT
 recorded_with: VCR 4.0.0

@@ -7,15 +7,22 @@ class CoolPay
 
   RECIPIENTS_URL = '/api/recipients'.freeze
   LOGIN_URL      = '/api/login'.freeze
+  PAYMENTS_URL   = '/api/payments'.freeze
 
   def create_recipient(attributes)
     response = post_response(RECIPIENTS_URL, body: { recipient: attributes })
-    Recipient.new(response['recipient'])
+    response['recipient']
   end
 
   def fetch_recipients
-    get_response(RECIPIENTS_URL)['recipients'].map { |response|  Recipient.new(response) }
+    get_response(RECIPIENTS_URL)['recipients']
   end
+
+  def create_payment(attributes)
+    response = post_response(PAYMENTS_URL, body: { payment: attributes })
+    response['payment']
+  end
+
 
   private
 

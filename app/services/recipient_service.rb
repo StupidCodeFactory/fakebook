@@ -1,7 +1,7 @@
 class RecipientService
 
   def create(attributes)
-    api.create_recipient(attributes)
+    Recipient.new(api.create_recipient(attributes))
   end
 
   def find(id)
@@ -9,7 +9,7 @@ class RecipientService
   end
 
   def recipients
-    @recipients ||= api.fetch_recipients
+    @recipients ||= api.fetch_recipients.map { |response|  Recipient.new(response) }
   end
 
   def api

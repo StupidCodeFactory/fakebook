@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 21:03:43 GMT
+      - Tue, 21 Aug 2018 22:26:56 GMT
       Content-Length:
       - '48'
       Content-Type:
@@ -35,14 +35,14 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - e59c856e-c6d5-4683-b0f8-7e0106ff0738
+      - b084a236-02c1-47ee-b9ba-147c9c058e32
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"e63fe48f-9644-44a7-9632-6d0752df747e"}'
+      string: '{"token":"267c5d3c-0cdd-4213-9cf1-04477ab144bf"}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 21:03:44 GMT
+  recorded_at: Tue, 21 Aug 2018 22:26:57 GMT
 - request:
     method: get
     uri: https://coolpay.herokuapp.com/api/recipients
@@ -70,9 +70,9 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 21:03:43 GMT
+      - Tue, 21 Aug 2018 22:26:57 GMT
       Content-Length:
-      - '144'
+      - '272'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
@@ -80,15 +80,59 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - 5d3c4fdf-b18f-45ef-97ce-40222bea2c34
+      - 3b212211-99ea-490c-8ef8-49b1760342de
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"recipients":[{"name":"John Doe","id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8"},{"name":"John
-        Doe","id":"8cc574c3-3350-4c15-a464-8a953f5a231e"}]}'
+        Doe","id":"8cc574c3-3350-4c15-a464-8a953f5a231e"},{"name":"John Doe","id":"65ffa457-bc7d-46e1-bb25-237b43962a9e"},{"name":"John
+        Doe","id":"e211830d-9181-4a2e-bf8c-28bdd74f125f"}]}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 21:03:44 GMT
+  recorded_at: Tue, 21 Aug 2018 22:26:57 GMT
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"Yann1","apikey":"6C5BC43B473975B8"}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 22:26:57 GMT
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - ab283021-17e5-4b9d-8199-491a5c2e3a5e
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"66967917-d768-4913-b32a-671b9a10c207"}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 22:26:57 GMT
 - request:
     method: get
     uri: https://coolpay.herokuapp.com/api/recipients
@@ -116,9 +160,9 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 21:03:43 GMT
+      - Tue, 21 Aug 2018 22:26:57 GMT
       Content-Length:
-      - '144'
+      - '272'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
@@ -126,13 +170,14 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - 1ef0c417-036c-45a3-a6e2-54f868b04620
+      - 07b8a9cb-d266-4a00-980c-db8bcb93a7b5
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"recipients":[{"name":"John Doe","id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8"},{"name":"John
-        Doe","id":"8cc574c3-3350-4c15-a464-8a953f5a231e"}]}'
+        Doe","id":"8cc574c3-3350-4c15-a464-8a953f5a231e"},{"name":"John Doe","id":"65ffa457-bc7d-46e1-bb25-237b43962a9e"},{"name":"John
+        Doe","id":"e211830d-9181-4a2e-bf8c-28bdd74f125f"}]}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 21:03:44 GMT
+  recorded_at: Tue, 21 Aug 2018 22:26:57 GMT
 recorded_with: VCR 4.0.0
