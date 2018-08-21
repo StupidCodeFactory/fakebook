@@ -29,5 +29,9 @@ module Fakebook
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.x.coolpay.api_endoint  = ENV.fetch('COOLPAY_API_ENDPOINT')
+    config.x.coolpay.api_key      = ENV.fetch('COOLPAY_API_KEY')
+    config.x.coolpay.api_username = ENV.fetch('COOLPAY_USERNAME')
   end
 end
