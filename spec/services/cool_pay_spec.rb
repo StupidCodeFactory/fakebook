@@ -5,7 +5,7 @@ RSpec.describe CoolPay do
     let(:name) { 'John Doe' }
 
     it 'posts to coolpay', vcr: { cassette_name: :create_recipient } do
-      expect(subject.create_recipient(name: name)).
+      expect(subject.create_recipient(recipient: { name: name })).
         to include('name' => 'John Doe', 'id' => 'e211830d-9181-4a2e-bf8c-28bdd74f125f')
     end
 
@@ -26,14 +26,20 @@ RSpec.describe CoolPay do
     end
   end
 
-
   describe '#create_recipient', vcr: { cassette_name: :create_payment } do
     let(:payload) do
-      { recipient_id: 'df6cfea5-76a2-426e-af12-715e3dc6c0a8', amount: 10.5, currency: 'GBP' }
+      { payment: { recipient_id: 'df6cfea5-76a2-426e-af12-715e3dc6c0a8', amount: 10.5, currency: 'GBP' } }
     end
 
     it 'creates a payment' do
       expect(subject.create_payment(payload)).to include('id', 'amount', 'currency', 'recipient_id', 'status')
+    end
+  end
+
+  describe '#fetch_payments', vcr: { cassette_name: :fetch_payments } do
+    it 'returns a list of payments' do
+      expect(subject.fetch_payments).to all(include('id', 'amount', 'currency', 'recipient_id', 'status'))
+      expect(subject.fetch_recipients.size).to eq(7)
     end
   end
 

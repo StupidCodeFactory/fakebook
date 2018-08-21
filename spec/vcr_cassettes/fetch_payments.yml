@@ -1,0 +1,182 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"Yann1","apikey":"6C5BC43B473975B8"}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 22:45:09 GMT
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - f90a7316-cac6-47ff-8396-b7dbf930c5ac
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"5a1aa177-037a-4923-bfa5-f03382dd8058"}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 22:45:10 GMT
+- request:
+    method: get
+    uri: https://coolpay.herokuapp.com/api/payments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - api_token
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 22:45:10 GMT
+      Content-Length:
+      - '463'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - ce60fa92-62c2-43c6-88ce-ceef1676b0fc
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"payments":[{"status":"failed","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"ace46638-66ef-4c0c-b648-99cef7724ae3","currency":"GBP","amount":"10.5"},{"status":"paid","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"5bfbbd33-1e5a-4cda-a567-386df35983b2","currency":"GBP","amount":"10.5"},{"status":"paid","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"7bb50fde-75dc-4a62-9515-2d4b5b9f86b6","currency":"GBP","amount":"10.5"}]}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 22:45:11 GMT
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"Yann1","apikey":"6C5BC43B473975B8"}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 22:45:10 GMT
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - bbbe7c0e-0a15-4a3f-bd57-bc0cf6a809f7
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"3b1fb198-d573-4599-badb-128f4630e1a3"}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 22:45:11 GMT
+- request:
+    method: get
+    uri: https://coolpay.herokuapp.com/api/recipients
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - api_token
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 22:45:10 GMT
+      Content-Length:
+      - '464'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - 6f625995-c726-4135-be55-b1a9513ad37b
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"recipients":[{"name":"John Doe","id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8"},{"name":"John
+        Doe","id":"8cc574c3-3350-4c15-a464-8a953f5a231e"},{"name":"John Doe","id":"65ffa457-bc7d-46e1-bb25-237b43962a9e"},{"name":"John
+        Doe","id":"e211830d-9181-4a2e-bf8c-28bdd74f125f"},{"name":"John Doe","id":"34ee45df-4e34-47ae-8687-038d64007a8e"},{"name":"John
+        Doe","id":"01fa643b-1509-43bf-bd89-43faacff10c1"},{"name":"John Doe","id":"ab088319-38c9-4d9e-a48b-dda7641642bb"}]}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 22:45:11 GMT
+recorded_with: VCR 4.0.0

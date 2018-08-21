@@ -1,7 +1,7 @@
 class RecipientService
 
   def create(attributes)
-    Recipient.new(api.create_recipient(attributes))
+    Recipient.new(api.create_recipient(recipient: attributes))
   end
 
   def find(id)

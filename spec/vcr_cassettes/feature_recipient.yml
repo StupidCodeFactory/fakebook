@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:38:51 GMT
+      - Tue, 21 Aug 2018 22:57:57 GMT
       Content-Length:
       - '48'
       Content-Type:
@@ -35,14 +35,14 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - 30a5a941-a96c-49cb-afb4-814d0ba02057
+      - c4615236-088c-44f6-82bf-b4717dd341c3
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"36a8194e-9f1b-4cbe-b5f0-5c25a1324bc2"}'
+      string: '{"token":"fc70e037-b50b-4503-8c68-ecf060061170"}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:38:51 GMT
+  recorded_at: Tue, 21 Aug 2018 22:57:57 GMT
 - request:
     method: get
     uri: https://coolpay.herokuapp.com/api/recipients
@@ -70,9 +70,9 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:38:51 GMT
+      - Tue, 21 Aug 2018 22:57:57 GMT
       Content-Length:
-      - '400'
+      - '528'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
@@ -80,7 +80,7 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - e4cbb8b5-8778-41e5-82c0-e4093ff45a47
+      - ef77c15d-4fa8-45ce-92e5-8e089437e955
       Via:
       - 1.1 vegur
     body:
@@ -88,9 +88,10 @@ http_interactions:
       string: '{"recipients":[{"name":"John Doe","id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8"},{"name":"John
         Doe","id":"8cc574c3-3350-4c15-a464-8a953f5a231e"},{"name":"John Doe","id":"65ffa457-bc7d-46e1-bb25-237b43962a9e"},{"name":"John
         Doe","id":"e211830d-9181-4a2e-bf8c-28bdd74f125f"},{"name":"John Doe","id":"34ee45df-4e34-47ae-8687-038d64007a8e"},{"name":"John
-        Doe","id":"01fa643b-1509-43bf-bd89-43faacff10c1"}]}'
+        Doe","id":"01fa643b-1509-43bf-bd89-43faacff10c1"},{"name":"John Doe","id":"ab088319-38c9-4d9e-a48b-dda7641642bb"},{"name":"John
+        Doe","id":"215b4ba1-0e1c-405b-9e01-81e3699442a2"}]}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:38:52 GMT
+  recorded_at: Tue, 21 Aug 2018 22:57:57 GMT
 - request:
     method: post
     uri: https://coolpay.herokuapp.com/api/login
@@ -116,7 +117,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:38:51 GMT
+      - Tue, 21 Aug 2018 22:57:57 GMT
       Content-Length:
       - '48'
       Content-Type:
@@ -126,14 +127,102 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - 0c9dfb15-7819-47dc-a20b-24bd32dc2dd1
+      - df9af486-a828-4421-b267-99636ba3d8c6
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"cea304d2-55bf-4840-8a67-c786db79a992"}'
+      string: '{"token":"8fad3cc4-0548-4378-a929-0df1512af9f6"}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:38:52 GMT
+  recorded_at: Tue, 21 Aug 2018 22:57:58 GMT
+- request:
+    method: get
+    uri: https://coolpay.herokuapp.com/api/payments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - api_token
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 22:57:57 GMT
+      Content-Length:
+      - '463'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - 0f5fcff2-d68a-4ba3-9401-df8408d9b27f
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"payments":[{"status":"failed","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"ace46638-66ef-4c0c-b648-99cef7724ae3","currency":"GBP","amount":"10.5"},{"status":"paid","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"5bfbbd33-1e5a-4cda-a567-386df35983b2","currency":"GBP","amount":"10.5"},{"status":"paid","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"7bb50fde-75dc-4a62-9515-2d4b5b9f86b6","currency":"GBP","amount":"10.5"}]}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 22:57:58 GMT
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"Yann1","apikey":"6C5BC43B473975B8"}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 22:57:58 GMT
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - bb8b9641-02f3-4d97-9c0f-4912df32f721
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"17353cb4-7a50-463d-9248-4ff15c74f82d"}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 22:57:58 GMT
 - request:
     method: post
     uri: https://coolpay.herokuapp.com/api/recipients
@@ -161,7 +250,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:38:51 GMT
+      - Tue, 21 Aug 2018 22:57:58 GMT
       Content-Length:
       - '77'
       Content-Type:
@@ -171,16 +260,16 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - fdc35711-9a19-462e-8223-8613105f7620
+      - e5d42174-ee3c-43d6-8b6e-54157fb456c7
       Location:
-      - "/api/recipients/ab088319-38c9-4d9e-a48b-dda7641642bb"
+      - "/api/recipients/e94155e1-8449-4a8d-acbd-4fe538ecdbfd"
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"recipient":{"name":"John Doe","id":"ab088319-38c9-4d9e-a48b-dda7641642bb"}}'
+      string: '{"recipient":{"name":"John Doe","id":"e94155e1-8449-4a8d-acbd-4fe538ecdbfd"}}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:38:52 GMT
+  recorded_at: Tue, 21 Aug 2018 22:57:58 GMT
 - request:
     method: post
     uri: https://coolpay.herokuapp.com/api/login
@@ -206,7 +295,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:38:56 GMT
+      - Tue, 21 Aug 2018 22:58:03 GMT
       Content-Length:
       - '48'
       Content-Type:
@@ -216,14 +305,14 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - 473f7a80-093a-4cc0-ace5-0ab774375297
+      - 0b9102ed-c86d-437a-89f8-ab7e197e20ff
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"e7b5cb86-c9c4-49c1-8122-b62135b58435"}'
+      string: '{"token":"365fc296-3dd4-4346-9a11-3e1d9650d250"}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:38:57 GMT
+  recorded_at: Tue, 21 Aug 2018 22:58:03 GMT
 - request:
     method: get
     uri: https://coolpay.herokuapp.com/api/recipients
@@ -251,9 +340,9 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:38:57 GMT
+      - Tue, 21 Aug 2018 22:58:03 GMT
       Content-Length:
-      - '464'
+      - '592'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
@@ -261,7 +350,7 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - 0c42b74a-afbe-423e-91ed-e73e2e9c8c74
+      - 22411482-f733-4350-93e0-a8537d36b40e
       Via:
       - 1.1 vegur
     body:
@@ -269,9 +358,10 @@ http_interactions:
       string: '{"recipients":[{"name":"John Doe","id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8"},{"name":"John
         Doe","id":"8cc574c3-3350-4c15-a464-8a953f5a231e"},{"name":"John Doe","id":"65ffa457-bc7d-46e1-bb25-237b43962a9e"},{"name":"John
         Doe","id":"e211830d-9181-4a2e-bf8c-28bdd74f125f"},{"name":"John Doe","id":"34ee45df-4e34-47ae-8687-038d64007a8e"},{"name":"John
-        Doe","id":"01fa643b-1509-43bf-bd89-43faacff10c1"},{"name":"John Doe","id":"ab088319-38c9-4d9e-a48b-dda7641642bb"}]}'
+        Doe","id":"01fa643b-1509-43bf-bd89-43faacff10c1"},{"name":"John Doe","id":"ab088319-38c9-4d9e-a48b-dda7641642bb"},{"name":"John
+        Doe","id":"215b4ba1-0e1c-405b-9e01-81e3699442a2"},{"name":"John Doe","id":"e94155e1-8449-4a8d-acbd-4fe538ecdbfd"}]}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:38:57 GMT
+  recorded_at: Tue, 21 Aug 2018 22:58:04 GMT
 - request:
     method: post
     uri: https://coolpay.herokuapp.com/api/login
@@ -297,7 +387,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:38:57 GMT
+      - Tue, 21 Aug 2018 22:58:04 GMT
       Content-Length:
       - '48'
       Content-Type:
@@ -307,14 +397,14 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - 35e6a776-6c87-480c-af72-885e354cb3c8
+      - 31188d6c-663d-4b86-a6fc-97157864e399
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"d778af9d-8650-4deb-a39d-a4fb84c0d6e3"}'
+      string: '{"token":"22f4156f-15af-4ff5-8f93-62546b883515"}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:38:58 GMT
+  recorded_at: Tue, 21 Aug 2018 22:58:04 GMT
 - request:
     method: post
     uri: https://coolpay.herokuapp.com/api/payments
@@ -342,7 +432,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:38:57 GMT
+      - Tue, 21 Aug 2018 22:58:04 GMT
       Content-Length:
       - '166'
       Content-Type:
@@ -352,16 +442,16 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - 67318fdc-add9-4bb7-8f36-6038b4a917fb
+      - f0da0e8e-646c-4081-b779-c8cb969d6b91
       Location:
-      - "/api/payments/7bb50fde-75dc-4a62-9515-2d4b5b9f86b6"
+      - "/api/payments/5995b116-d7a6-4dac-96f5-cf63b0e19816"
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"payment":{"status":"processing","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"7bb50fde-75dc-4a62-9515-2d4b5b9f86b6","currency":"GBP","amount":"10.5"}}'
+      string: '{"payment":{"status":"processing","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"5995b116-d7a6-4dac-96f5-cf63b0e19816","currency":"GBP","amount":"10.5"}}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:38:58 GMT
+  recorded_at: Tue, 21 Aug 2018 22:58:04 GMT
 - request:
     method: post
     uri: https://coolpay.herokuapp.com/api/login
@@ -387,7 +477,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:38:58 GMT
+      - Tue, 21 Aug 2018 22:58:04 GMT
       Content-Length:
       - '48'
       Content-Type:
@@ -397,14 +487,14 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - dce3d7bb-be82-41ae-acfa-49e657be2414
+      - 0a49e20c-c9d9-4961-8956-2b012101477b
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"token":"e74cccef-bf3a-485d-aee3-517e7ee99ae1"}'
+      string: '{"token":"ef6dbeec-3481-4be2-99f4-4784145356b5"}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:38:58 GMT
+  recorded_at: Tue, 21 Aug 2018 22:58:05 GMT
 - request:
     method: get
     uri: https://coolpay.herokuapp.com/api/recipients
@@ -432,9 +522,9 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Tue, 21 Aug 2018 22:38:58 GMT
+      - Tue, 21 Aug 2018 22:58:04 GMT
       Content-Length:
-      - '464'
+      - '592'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
@@ -442,7 +532,7 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Request-Id:
-      - 61836990-4386-4ccf-9a06-2791c67b7b31
+      - 42225948-5612-449b-b277-29389657184e
       Via:
       - 1.1 vegur
     body:
@@ -450,7 +540,96 @@ http_interactions:
       string: '{"recipients":[{"name":"John Doe","id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8"},{"name":"John
         Doe","id":"8cc574c3-3350-4c15-a464-8a953f5a231e"},{"name":"John Doe","id":"65ffa457-bc7d-46e1-bb25-237b43962a9e"},{"name":"John
         Doe","id":"e211830d-9181-4a2e-bf8c-28bdd74f125f"},{"name":"John Doe","id":"34ee45df-4e34-47ae-8687-038d64007a8e"},{"name":"John
-        Doe","id":"01fa643b-1509-43bf-bd89-43faacff10c1"},{"name":"John Doe","id":"ab088319-38c9-4d9e-a48b-dda7641642bb"}]}'
+        Doe","id":"01fa643b-1509-43bf-bd89-43faacff10c1"},{"name":"John Doe","id":"ab088319-38c9-4d9e-a48b-dda7641642bb"},{"name":"John
+        Doe","id":"215b4ba1-0e1c-405b-9e01-81e3699442a2"},{"name":"John Doe","id":"e94155e1-8449-4a8d-acbd-4fe538ecdbfd"}]}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2018 22:38:59 GMT
+  recorded_at: Tue, 21 Aug 2018 22:58:05 GMT
+- request:
+    method: post
+    uri: https://coolpay.herokuapp.com/api/login
+    body:
+      encoding: UTF-8
+      string: '{"username":"Yann1","apikey":"6C5BC43B473975B8"}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 22:58:04 GMT
+      Content-Length:
+      - '48'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - 4fcfc4ad-e22c-4367-80d9-fe204963dcd1
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"token":"f5e6c87e-2a99-400e-8d15-3daa5d114e96"}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 22:58:05 GMT
+- request:
+    method: get
+    uri: https://coolpay.herokuapp.com/api/payments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.2
+      Content-Type:
+      - application/json
+      Authorization:
+      - api_token
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - Cowboy
+      Date:
+      - Tue, 21 Aug 2018 22:58:04 GMT
+      Content-Length:
+      - '618'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Request-Id:
+      - fd28ec43-5977-45ba-a9d2-c22394069157
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"payments":[{"status":"failed","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"ace46638-66ef-4c0c-b648-99cef7724ae3","currency":"GBP","amount":"10.5"},{"status":"paid","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"5bfbbd33-1e5a-4cda-a567-386df35983b2","currency":"GBP","amount":"10.5"},{"status":"paid","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"7bb50fde-75dc-4a62-9515-2d4b5b9f86b6","currency":"GBP","amount":"10.5"},{"status":"processing","recipient_id":"df6cfea5-76a2-426e-af12-715e3dc6c0a8","id":"5995b116-d7a6-4dac-96f5-cf63b0e19816","currency":"GBP","amount":"10.5"}]}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2018 22:58:05 GMT
 recorded_with: VCR 4.0.0

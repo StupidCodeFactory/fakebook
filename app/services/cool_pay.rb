@@ -10,7 +10,7 @@ class CoolPay
   PAYMENTS_URL   = '/api/payments'.freeze
 
   def create_recipient(attributes)
-    response = post_response(RECIPIENTS_URL, body: { recipient: attributes })
+    response = post_response(RECIPIENTS_URL, body: attributes)
     response['recipient']
   end
 
@@ -19,10 +19,13 @@ class CoolPay
   end
 
   def create_payment(attributes)
-    response = post_response(PAYMENTS_URL, body: { payment: attributes })
+    response = post_response(PAYMENTS_URL, body: attributes)
     response['payment']
   end
 
+  def fetch_payments
+    get_response(PAYMENTS_URL)['payments']
+  end
 
   private
 

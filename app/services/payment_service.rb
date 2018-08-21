@@ -1,11 +1,13 @@
 class PaymentService
+
   def create(attributes)
-    api.create_payment(attributes)
+    Payment.new(api.create_payment(payment: attributes))
   end
 
   def payments
-    api.fetch_payments
+    api.fetch_payments.map { |response| Payment.new(response) }
   end
+
   private
 
   def api
