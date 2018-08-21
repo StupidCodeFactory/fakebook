@@ -11,5 +11,11 @@ RSpec.describe 'Payments Page', js: true do
     visit root_path
 
     click_on 'Login with Github'
+
+    expect(page).to have_css 'h2', text: 'Your Recipients'
+
+    fill_in 'recipient[name]', with: 'John Doe'
+    click_on 'Create Recipient'
+
   end
 end
