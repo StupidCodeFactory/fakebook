@@ -13,12 +13,24 @@ class CoolPay
     Recipient.new(response['recipient'])
   end
 
+  def fetch_recipients
+    get_response(RECIPIENTS_URL)['recipients'].map { |response|  Recipient.new(response) }
+  end
+
   private
 
   def connection
     @connection ||= Faraday.new(url: config.api_endoint)
   end
-
+  def get_response(url, params: {})
+    response = connection.get do |req|
+      req.url url
+      req.headers[CONTEN_TYPE_HEADER] = 'application/json'
+      req.headers[API_KEY_HEADER] = "Bearer #{auth_token}"
+      req.params = params
+    end
+    handle_response(response)
+  end
 
   def post_response(url, params: {}, body: {}, login: true)
     response = connection.post do |req|
@@ -29,6 +41,10 @@ class CoolPay
       req.body = body.to_json
     end
 
+    handle_response(response)
+  end
+
+  def handle_response(response)
     if response.success?
       JSON.parse(response.body)
     else
