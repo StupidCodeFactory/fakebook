@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   authenticated do
     root 'recipients#index'
-    resources :recipients, only: [:create]
+    resources :recipients, only: [:new, :create, :index] do
+      resources :payments, only: [:new, :create]
+    end
   end
   unauthenticated do
     devise_scope :user do

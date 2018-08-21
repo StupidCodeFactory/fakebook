@@ -19,6 +19,15 @@ RSpec.describe 'Payments Page', js: true do
 
     click_on 'Create Recipient'
 
-    expect(page).to have_css 'table tobdy tr td', text: new_recipient_name
+    expect(page).to have_css 'table tbody tr td:first-child', text: new_recipient_name
+
+    within 'table tbody tr:first-child' do
+      click_on 'Send Money'
+    end
+
+    fill_in 'payments[amount]', with: 10.5
+    click_on 'Pay!'
+
+
   end
 end
