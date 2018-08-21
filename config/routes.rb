@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   authenticated do
     root 'recipients#index'
+    resources :recipients, only: [:create]
   end
   unauthenticated do
     devise_scope :user do
