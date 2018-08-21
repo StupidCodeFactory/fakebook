@@ -32,7 +32,7 @@ RSpec.describe CoolPay do
       { recipient_id: 'df6cfea5-76a2-426e-af12-715e3dc6c0a8', amount: 10.5, currency: 'GBP' }
     end
 
-    it 'createes a payment' do
+    it 'creates a payment' do
       expect(subject.create_payment(payload)).to include('id', 'amount', 'currency', 'recipient_id', 'status')
     end
   end

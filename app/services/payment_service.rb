@@ -3,6 +3,9 @@ class PaymentService
     api.create_payment(attributes)
   end
 
+  def payments
+    api.fetch_payments
+  end
   private
 
   def api

@@ -5,7 +5,11 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    payment_service.create(payment_params)
+    payment_service.create(
+      payment_params.merge(recipient_id: params[:recipient_id])
+    )
+    flash[:notice] = 'Payment sent'
+    redirect_to recipients_path
   end
 
   private

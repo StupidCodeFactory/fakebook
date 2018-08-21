@@ -1,7 +1,8 @@
 class RecipientsController < ApplicationController
   def index
-    @recipient = Recipient.new
+    @recipient  = Recipient.new
     @recipients = recipient_service.recipients
+    @payments   = payment_service.payments
   end
 
   def create
@@ -10,11 +11,15 @@ class RecipientsController < ApplicationController
 
   private
 
-  def recipient_service
-    RecipientService.new
-  end
-
   def recipient_params
     params.require(:recipient).permit(:name)
+  end
+
+  def recipient_service
+    @recipient_service ||= RecipientService.new
+  end
+
+  def payment_service
+    @payment_service ||= PaymentService.new
   end
 end
