@@ -1,12 +1,11 @@
 %h2 Send Money to #{@recipient.name}
 
-= form_for [@recipient, @payment] do |f|
-  = f.hidden_field :id
-  = f.fields_for :payment do |pf|
-
+= form_for [@recipient, @payment], url: recipient_payments_path(@recipient.id) do |f|
   .form-item
-    = pf.label :amount
-    = pf.number_field :amount
+    = f.label :amount
+    = f.number_field :amount, step: 0.01
   .form-item
-    = pf.label :currency
-    = pf.select :currency, options_from_collection_for_select(Money::Currency.all, :iso_code, :name)
+    = f.label :currency
+    = f.select :currency, options_from_collection_for_select(Money::Currency.all, :iso_code, :name)
+  .form-item.is-buttons
+    = f.submit 'Pay!', class: 'button'

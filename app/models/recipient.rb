@@ -1,6 +1,5 @@
 class Recipient
-  include ActiveModel::Model
-  include ActiveModel::Attributes
+  include APIModel
 
   attribute :name, :string
   attribute :id,   :string
