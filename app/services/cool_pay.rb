@@ -22,6 +22,7 @@ class CoolPay
   def connection
     @connection ||= Faraday.new(url: config.api_endoint)
   end
+
   def get_response(url, params: {})
     response = connection.get do |req|
       req.url url
@@ -53,7 +54,7 @@ class CoolPay
   end
 
   def auth_token
-    @auth_token ||= post_response(
+    post_response(
       LOGIN_URL,
       body: { username: config.api_username, apikey:  config.api_key},
       login: false)['token']

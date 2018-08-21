@@ -6,3 +6,12 @@
     = f.text_field :name
   .form-item.is-buttons
     = f.submit class: 'button'
+
+
+%table
+  %thead
+    %tr
+      %td Name
+      %td Action
+  %tbody
+    = render @recipients
