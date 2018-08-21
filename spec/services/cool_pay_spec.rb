@@ -4,7 +4,7 @@ RSpec.describe CoolPay do
   describe '#create_recipient' do
     let(:name) { 'John Doe' }
 
-    it 'posts to coolpay', vcr: { cassette_name: :create_recipient }  do
+    it 'posts to coolpay', vcr: { cassette_name: :create_recipient } do
       expect(subject.create_recipient(name: name)).
         to be_instance_of(Recipient).and have_attributes(
                                            name: 'John Doe',

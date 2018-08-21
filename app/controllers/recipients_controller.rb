@@ -1,6 +1,7 @@
 class RecipientsController < ApplicationController
   def index
     @recipient = Recipient.new
+    @recipients = recipient_service.fetch_recipients
   end
 
   def create

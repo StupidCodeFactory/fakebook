@@ -9,7 +9,7 @@ class CoolPay
   LOGIN_URL      = '/api/login'.freeze
 
   def create_recipient(attributes)
-    response = post_response(RECIPIENTS_URL, params: { recipient: attributes })
+    response = post_response(RECIPIENTS_URL, body: { recipient: attributes })
     Recipient.new(response['recipient'])
   end
 
