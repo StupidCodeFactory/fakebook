@@ -12,17 +12,24 @@
     .page
       %header.header
         .is-navbar-container
-          .is-brand.is-center
-            = link_to 'Fakebook Payment', root_path, class: 'is-logo'
+          %nav.is-navbar
+            %ul
+              %li.is-brand
+                = link_to 'Fakebook Payment', root_path, class: 'is-logo'
+
+              %li= link_to 'Logout', destroy_user_session_path, method: :delete
       %main.main
-        - if alert
-          .alert= alert
-        - if notice
-          .notice= notice
         .is-row
           .is-col
           .is-col
+            - if alert
+              .alert.is-error
+                = alert
+            - if notice
+              .alert.is-success
+                = notice
             = yield
           .is-col
       %footer.footer
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

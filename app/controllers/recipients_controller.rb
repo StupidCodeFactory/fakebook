@@ -3,22 +3,27 @@ class RecipientsController < ApplicationController
 
   def index
     load_page_data
+    @recipient = Recipient.new
   end
 
   def create
-    recipient_service.create recipient_params
     load_page_data
-    @recipient  = Recipient.new
-    @recipients = recipient_service.recipients
-    @payments   = payment_service.payments
+    @recipient = Recipient.new(recipient_params)
+    if @recipient.valid?
+      recipient_service.create recipient_params
+      flash['notice'] = 'Recipient Created'
+      @recipient  = Recipient.new
+      redirect_to action: :index
+    else
+      flash.now['alert'] = @recipient.errors.full_messages.to_sentence
+      render :index
+    end
 
-    render :index
   end
 
   private
 
   def load_page_data
-    @recipient  = Recipient.new
     @recipients = recipient_service.recipients
     @payments   = payment_service.payments
   end

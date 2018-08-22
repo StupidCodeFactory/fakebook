@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :recipients, only: [:new, :create, :index] do
       resources :payments, only: [:new, :create]
     end
+     devise_scope :user do
+       delete 'sessions', to: 'devise/sessions#destroy', as: :destroy_user_session
+     end
   end
   unauthenticated do
     devise_scope :user do
