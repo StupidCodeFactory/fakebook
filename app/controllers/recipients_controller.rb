@@ -7,7 +7,6 @@ class RecipientsController < ApplicationController
   end
 
   def create
-    load_page_data
     @recipient = Recipient.new(recipient_params)
     if @recipient.valid?
       recipient_service.create recipient_params
@@ -15,6 +14,7 @@ class RecipientsController < ApplicationController
       @recipient  = Recipient.new
       redirect_to action: :index
     else
+      load_page_data
       flash.now['alert'] = @recipient.errors.full_messages.to_sentence
       render :index
     end

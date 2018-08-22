@@ -30,10 +30,10 @@ RSpec.describe 'Payments Page' do
     select 'British Pound', from: 'payment[currency]'
     click_on 'Pay!'
 
-    expect(page).to have_css '.notice', text: 'Payment sent'
+    expect(page).to have_css '.alert.is-success', text: 'Payment sent'
 
     within page.all('table').last do
-      within page.find('tbody tr:last-child') do
+      within page.find('tbody tr:first-child') do
         expect(page).to have_css 'td:first-child', text: '10.5'
       end
     end
