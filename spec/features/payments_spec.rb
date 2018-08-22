@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe 'Payments Page', js: true do
+RSpec.describe 'Payments Page' do
   before do
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
