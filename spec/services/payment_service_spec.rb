@@ -8,7 +8,7 @@ RSpec.describe PaymentService do
     end
 
     it 'creates a payment' do
-      expect(subject.create(payload)).to include('id', 'amount', 'currency', 'recipient_id', 'status')
+      expect(subject.create(payload)).to be_instance_of(Payment)
     end
   end
 

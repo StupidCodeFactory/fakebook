@@ -4,7 +4,7 @@ RSpec.describe 'Payments Page', js: true do
   before do
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
-        uid: '123545', info: { email: 'test@example.com' })
+      uid: '123545', info: { email: 'test@example.com' })
   end
   let(:new_recipient_name) { 'John Doe' }
 
@@ -19,10 +19,11 @@ RSpec.describe 'Payments Page', js: true do
 
     click_on 'Create Recipient'
 
-    expect(page).to have_css 'table tbody tr td:first-child', text: new_recipient_name
-
-    within 'table tbody tr:first-child' do
-      click_on 'Send Money'
+    within page.first('table') do
+      within page.first('tbody tr') do
+        expect(page).to have_css 'td:first-child', text: new_recipient_name
+        click_on 'Send Money'
+      end
     end
 
     fill_in 'payment[amount]', with: 10.5
@@ -31,6 +32,10 @@ RSpec.describe 'Payments Page', js: true do
 
     expect(page).to have_css '.notice', text: 'Payment sent'
 
-    expect(page).to have_css 'table tbody tr td', text: '10.5'
+    within page.all('table').last do
+      within page.find('tbody tr:last-child') do
+        expect(page).to have_css 'td:first-child', text: '10.5'
+      end
+    end
   end
 end
