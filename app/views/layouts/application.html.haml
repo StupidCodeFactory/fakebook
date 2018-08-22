@@ -11,9 +11,18 @@
   %body
     .page
       %header.header
+        .is-navbar-container
+          .is-brand.is-center
+            = link_to 'Fakebook Payment', root_path, class: 'is-logo'
       %main.main
-        .alert= alert
-        .notice= notice
+        - if alert
+          .alert= alert
+        - if notice
+          .notice= notice
+        .is-row
+          .is-col
+          .is-col
+            = yield
+          .is-col
       %footer.footer
-    = yield
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'

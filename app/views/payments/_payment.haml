@@ -1,0 +1,5 @@
+%tr
+  %td= payment.amount
+  %td= recipient_service.find(payment.recipient_id).name
+  %td= payment.currency
+  %td= payment.status

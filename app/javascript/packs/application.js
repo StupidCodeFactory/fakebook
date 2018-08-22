@@ -8,5 +8,4 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import $ from "jquery/dist/jquery";
-import "imperavi-kube/dist/css/kube";
-import * as Kube from "imperavi-kube/dist/js/kube";
+import 'master'

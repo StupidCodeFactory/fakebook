@@ -1,0 +1,11 @@
+@import "kube/dist/css/kube";
+@import "kube/dist/scss/vars.scss";
+@import "kube/dist/scss/mixins.scss";
+
+header.header {
+    height: 60px;
+    background-color: black;
+    is-logo a {
+        color: #000;
+    }
+}

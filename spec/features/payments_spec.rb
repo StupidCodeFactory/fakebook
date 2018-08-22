@@ -31,5 +31,6 @@ RSpec.describe 'Payments Page', js: true do
 
     expect(page).to have_css '.notice', text: 'Payment sent'
 
+    expect(page).to have_css 'table tbody tr td', text: '10.5'
   end
 end

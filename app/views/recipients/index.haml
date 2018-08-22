@@ -1,5 +1,4 @@
-%h2 Your Recipients
-
+%h2 Add a Recipient
 = form_for @recipient do |f|
   .form-item
     = f.label :name
@@ -8,6 +7,8 @@
     = f.submit class: 'button'
 
 
+%h2 Your Recipients
+
 %table
   %thead
     %tr
@@ -15,3 +16,14 @@
       %td Action
   %tbody
     = render @recipients
+
+%h2 Your Payments
+%table
+  %thead
+    %tr
+      %td Amount
+      %td Recipent
+      %td Currency
+      %td Status
+  %tbody
+    = render @payments
