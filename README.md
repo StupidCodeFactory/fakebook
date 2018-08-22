@@ -4,7 +4,8 @@
 ### How to run
 Install docker, docker-compose and direnv
 
-    ```bash
-    $ docker-compose up --build
-    $ docker-compose exec app rails db:create db:setup
-    ```
+```bash
+$ docker-compose up --build
+$ docker-compose exec app rails db:create db:setup
+$ docker-compose run app rake
+```
