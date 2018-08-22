@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+  postgres:
+    image: postgres:10-alpine
+    environment:
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    ports:
+      - 5432:5432
+  app:
+    build: .
+    volumes:
+      - ./:/usr/local/app/
+    command: bundle exec puma -b tcp://0.0.0.0:3000
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL:         "postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/"
+      GITHUB_KEY:           "${GITHUB_KEY}"
+      GITHUB_SECRET:        "${GITHUB_SECRET}"
+      COOLPAY_API_KEY:      "${COOLPAY_API_KEY}"
+      COOLPAY_USERNAME:     "${COOLPAY_USERNAME}"
+      COOLPAY_API_ENDPOINT: "${COOLPAY_API_ENDPOINT}"
+    depends_on:
+      - postgres
