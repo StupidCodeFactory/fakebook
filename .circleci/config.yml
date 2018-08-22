@@ -14,6 +14,13 @@ jobs:
 
     steps:
       - checkout
+      - run:
+          name: install Geckodriver
+          command: |
+            wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz
+            tar -xvzf geckodriver*
+            chmod +x geckodriver
+            sudo mv geckodriver /usr/local/bin/
 
       # Download and cache dependencies
       - restore_cache:
