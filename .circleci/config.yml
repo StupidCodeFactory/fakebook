@@ -25,7 +25,6 @@ jobs:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
-            yarn install
 
       - save_cache:
           paths:
@@ -46,12 +45,16 @@ jobs:
           paths:
             - ~/.cache/yarn
       # Database setup
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+      - run:
+          environment:
+            DATABASE_URL: "postgres://root@localhost:5432/"
+          command: bundle exec rake db:create db:schema:load
 
       # run tests!
       - run:
           name: run tests
+          environment:
+            DATABASE_URL: "postgres://root@localhost:5432/"
           command: |
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
